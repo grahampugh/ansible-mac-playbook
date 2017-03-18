@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Put this file at ~/
+# Then put the following into ~/.bash_profile (you may have to create this file too):
+# source ~/.prompt.sh
+
+# Get the emoji codes from http://apps.timwhitlock.info/emoji/tables/unicode
+gitUpToDateEmoji="\xE2\x9D\xA4" #❤
+gitOutOfDateEmoji="\xE2\x9D\x8C" #❌
+
+export PS1="\[\e[0;34m\]\u@\h\n"'$(git branch &>/dev/null; if [ $? -eq 0 ]; then \
+echo "\[\e[0;32m\][\[\e[0;35m\]${PWD##*/}; \[\e[0;33m\]$(git branch | grep ^*|sed s/\*\ //) \
+$(echo $(git status) | grep "nothing to commit" > /dev/null 2>&1; if [ "$?" -eq "0" ]; then \
+echo -e "\[\e[0;32m\]$gitUpToDateEmoji "; else \
+echo -e "\[\e[0;31m\]$gitOutOfDateEmoji "; fi)\[\e[0;32m\]] \$"; else \
+echo "\[\e[0;35m\][\W]\[\e[m\] \$"; fi) \[\e[0m\]'
+
+# git aliases
+alias ga="git add"
+alias gall="git add --all"
+alias gc="git commit -m"
+alias gpush="git push"
+alias gp="git pull"
+alias gs="git status"

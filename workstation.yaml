@@ -1,0 +1,5 @@
+# Configure a workstation
+---
+- include: cli_config.yaml
+- include: munki_config.yaml
+- include: atom_config.yaml

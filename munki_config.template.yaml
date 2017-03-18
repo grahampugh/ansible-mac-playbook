@@ -1,0 +1,26 @@
+This is a template file to configure your Munki client.
+
+Copy it to munki_config.yaml and enter your repo name, basic HTTP authentication
+key etc.
+
+munki_config.yaml is added to .git_ignore so your auth key isn't pushed to git.
+
+---
+- hosts: all
+  tasks:
+    - name: Set Munki repo
+      osx_defaults:
+        domain: ManagedInstalls
+        key: SoftwareRepoURL
+        type: string
+        value: http://munki/repo
+        state: present
+    - name: set Basic HTTP Auth
+      osx_defaults:
+        domain: /private/var/root/Library/Preferences/ManagedInstalls.plist
+        key: AdditionalHttpHeaders
+        type: array
+        value:
+          - "Authorization: Basic BIGLONGPASSWORD"
+        state: present
+      become: true

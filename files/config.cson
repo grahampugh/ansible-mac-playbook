@@ -1,0 +1,16 @@
+"*":
+  core:
+    telemetryConsent: "limited"
+  editor:
+    showInvisibles: true
+    softWrap: true
+    tabLength: 4
+    tabType: "soft"
+  "exception-reporting":
+    userId: "4396739a-79ba-41ef-8c29-e6ade1806773"
+  welcome:
+    showOnStartup: false
+".source.yaml":
+  editor:
+    autoIndentOnPaste: true
+    tabLength: 2

@@ -1,0 +1,22 @@
+---
+- hosts: localhost
+
+  tasks:
+    - name: Remove the roles directory if there
+      file:
+        path:  ./roles
+        state: absent
+
+    - command: ansible-galaxy install -r requirements.yaml --roles-path roles
+
+    - name: Create .gitignore if not there
+      copy:
+        content: ""
+        dest: ./.gitignore
+        force: no
+
+    - lineinfile:
+        dest:   ./.gitignore
+        regexp: '^\/roles$'
+        line:   '/roles'
+        state:  present

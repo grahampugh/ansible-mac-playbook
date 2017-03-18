@@ -1,0 +1,4 @@
+# Required additional roles
+---
+# Install a role from the Ansible Galaxy
+- src: hnakamur.atom-packages
