@@ -47,8 +47,15 @@ ansible-playbook workstations -i inventory workstation.yaml --ask-become-pass
 To-Do
 -----
 
+I haven't found any of these resources yet. Someone needs to do them.
+I may get there one day.
+
   * Ansible module for creating configuration profiles.
+  * Ansible module for installing/removing configuration profiles.
   * Ansible module for installing Munki on clients.
+  * Ansible module for manifestutil.
+  * Ansible module for AutoPkg.
+
 
 Won't Do
 -----
