@@ -1,6 +1,0 @@
-[workstations]
-Bristolian.local    ansible_connection=ssh        ansible_user=glgrp
-# AyeMac.local        ansible_connection=ssh        ansible_user=osx
-
-[servers]
-MiniMaus.local      ansible_connection=local

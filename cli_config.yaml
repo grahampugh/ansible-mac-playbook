@@ -2,11 +2,12 @@
 ---
 - hosts: all
 
+  tasks:
   - name: Copy git prompt
     copy:
       src: ./files/.prompt
       dest: "/Users/{{ ansible_user_id }}/.prompt"
-      owner: {{ ansible_user_id }}
+      owner: "{{ ansible_user_id }}"
       group: staff
       mode: 0644
 
@@ -14,6 +15,6 @@
     copy:
       src: ./files/.bash_profile
       dest: "/Users/{{ ansible_user_id }}/.bash_profile"
-      owner: {{ ansible_user_id }}
+      owner: "{{ ansible_user_id }}"
       group: staff
       mode: 0644

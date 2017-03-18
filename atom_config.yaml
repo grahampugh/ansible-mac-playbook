@@ -11,7 +11,7 @@
     copy:
       src: ./files/.atom/config.cson
       dest: "/Users/{{ ansible_user_id }}/.atom/config.cson"
-      owner: {{ ansible_user_id }}
+      owner: "{{ ansible_user_id }}"
       group: staff
       mode: 0644
     when: check_atom_config_path.stat.exists

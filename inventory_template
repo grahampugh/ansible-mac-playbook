@@ -1,0 +1,6 @@
+[workstations]
+workstation1.local      ansible_connection=ssh        ansible_user=fred
+# workstation2.local    ansible_connection=ssh        ansible_user=wilma
+
+[servers]
+server1.local           ansible_connection=local

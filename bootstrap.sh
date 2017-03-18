@@ -29,7 +29,7 @@ if [[ $(which ansible) ]]; then
     echo "### Ansible installed!"
     echo
     echo '### Running Ansible to configure Dev machine'
-    ansible-playbook local.yaml --ask-sudo-pass
+    ansible-playbook local.yaml --ask-becomes-pass
 
     echo '### Sending ssh key to other machines in the inventory'
     ansible workstations -i inventory -m authorized_key \

@@ -1,8 +1,7 @@
-# Configure a workstation
+# Configure the local server.
+# Before running this, run local_installs.yaml to get the required modules.
 ---
-- include: local_installs.yaml
 - include: cli_config.yaml
-- include: munki_config.yaml
 - include: atom_config.yaml
 
 - hosts: 127.0.0.1
@@ -12,3 +11,5 @@
       git-plus
   roles:
     - hnakamur.atom-packages
+
+- include: munki_config.yaml

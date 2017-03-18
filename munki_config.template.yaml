@@ -1,10 +1,9 @@
-This is a template file to configure your Munki client.
-
-Copy it to munki_config.yaml and enter your repo name, basic HTTP authentication
-key etc.
-
-munki_config.yaml is added to .git_ignore so your auth key isn't pushed to git.
-
+# This is a template file to configure your Munki client.
+#
+# Copy it to munki_config.yaml and enter your repo name, basic HTTP authentication
+# key etc.
+#
+# munki_config.yaml is added to .git_ignore so your auth key isn't pushed to git.
 ---
 - hosts: all
   tasks:
