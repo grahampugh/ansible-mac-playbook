@@ -2,3 +2,4 @@
 ---
 # Install a role from the Ansible Galaxy
 - src: hnakamur.atom-packages
+- src: cmprescott.xml

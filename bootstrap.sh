@@ -22,6 +22,7 @@ fi
 
 if [[ $(which pip) && -z $(which ansible) ]]; then
     sudo pip install ansible
+    sudo pip install lxml
 fi
 
 if [[ $(which ansible) ]]; then

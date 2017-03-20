@@ -1,0 +1,25 @@
+---
+
+- hosts: localhost
+  vars:
+    - profile_name: desktop_picture.mobileconfig
+  tasks:
+    - name: Get profileIdentifier
+      shell: /usr/libexec/PlistBuddy -c "Print :PayloadContent:0:PayloadIdentifier" files/desktop_picture.mobileconfig
+      register: payload_id
+    - name: Put content of mobileconfig to stdout
+      shell: /bin/cat "./files/{{ profile_name }}"
+      register: profile_output
+    - debug:
+        msg: "{{ payload_id.stdout }}"
+
+- hosts: workstations
+  tasks:
+    - name: Check if profile is there
+      shell: /usr/bin/profiles -L | grep "{{ hostvars.localhost.payload_id.stdout }}"
+      register: profile_grep
+    - debug:
+        msg: "Grep found: {{ payload_grep.stdout }}"
+
+    # - name: Install profile
+    #   shell: /usr/bin/profiles -I -F - < {{ profile_output|quote }}
