@@ -26,6 +26,7 @@ Available configurations:
   * `local_installs.yaml` - installs modules from Galaxy or git, as specified
     in `requirements.yaml`.
   * `local.yaml` - complete setup for the local machine that is running Ansible.
+  * `local-work.yaml` - complete setup for the local machine that is running Ansible (no Munki config included).
   * `workstation.yaml` - complete setup for other machines.
 
 Usage
@@ -34,7 +35,7 @@ Usage
   * **Local machine**:  
     The sudo password is required to set the Munki config.
 ```
-ansible-playbook local_install.yaml
+ansible-playbook local_installs.yaml
 ansible-playbook local.yaml --ask-become-pass
 ```
   * **Workstations**:  

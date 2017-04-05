@@ -1,0 +1,13 @@
+# Configure the local server.
+# Before running this, run local_installs.yaml to get the required modules.
+---
+- include: cli_config.yaml
+- include: atom_config.yaml
+
+- hosts: 127.0.0.1
+  connection: local
+  vars:
+    atom_packages_packages:
+      git-plus
+  roles:
+    - hnakamur.atom-packages
